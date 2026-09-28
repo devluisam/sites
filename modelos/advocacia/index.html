@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f3efe7">
+<title>Andrade &amp; Menezes Advocacia (modelo de demonstração)</title>
+<meta name="description" content="Modelo de demonstração feito por devluisam: site para escritório de advocacia em Manaus.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero.webp">
+<style>
+  :root {
+    --paper:#f3efe7; --paper2:#ebe5d9; --ink:#17181c; --ink2:#45474f; --mute:#595b63; --wine:#6e2323; --wine2:#561a1a; --line:#d8d0c1;
+    --night:#121317; --night2:#1b1c22; --pad:clamp(20px, 5vw, 48px);
+    --serif:"Cormorant Garamond", Georgia, serif; --sans:"Schibsted Grotesk", "Segoe UI", system-ui, sans-serif;
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body { margin:0; background:var(--paper); color:var(--ink); font:400 17px/1.7 var(--sans); overflow-x:hidden; -webkit-tap-highlight-color:transparent; }
+  img { display:block; max-width:100%; height:auto; }
+  a { color:inherit; }
+  .wrap { width:min(1200px, 100%); margin:0 auto; padding:0 var(--pad); }
+
+  .demo { background:var(--ink); color:#cfcac0; font-size:13px; text-align:center; padding:9px 16px; line-height:1.4; }
+  .demo a { color:#fff; font-weight:700; text-decoration:none; white-space:nowrap; }
+
+  header.top { border-bottom:1px solid var(--line); }
+  header.top .wrap { display:flex; align-items:center; justify-content:space-between; height:84px; gap:20px; }
+  .logo { text-decoration:none; line-height:1; }
+  .logo b { display:block; font:600 27px/1 var(--serif); letter-spacing:-.01em; }
+  .logo small { display:block; font:600 11px/1 var(--sans); letter-spacing:.34em; color:var(--wine); margin-top:6px; }
+  nav ul { display:flex; gap:32px; list-style:none; margin:0; padding:0; font-size:15px; font-weight:500; color:var(--ink2); }
+  nav a { text-decoration:none; }
+  nav a:hover { color:var(--wine); }
+
+  .btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:16px 26px; border-radius:4px; font:600 15.5px/1 var(--sans); text-decoration:none;
+    transition:background .25s, color .25s, transform .15s; white-space:nowrap; letter-spacing:.01em; }
+  .btn:active { transform:scale(.98); }
+  .btn-wine { background:var(--wine); color:#fff; }
+  .btn-wine:hover { background:var(--wine2); }
+  .btn-ghost { border:1px solid var(--ink); color:var(--ink); }
+  .btn-ghost:hover { background:var(--ink); color:var(--paper); }
+  .btn svg { width:19px; height:19px; }
+  .btn-sm { padding:12px 18px; font-size:14px; }
+
+  .eyebrow { font:600 12.5px/1 var(--sans); letter-spacing:.24em; text-transform:uppercase; color:var(--wine); margin:0 0 22px; }
+  h1 { font:500 clamp(48px, 7.4vw, 100px)/.95 var(--serif); letter-spacing:-.02em; margin:0 0 28px; }
+  h1 em { font-style:italic; color:var(--wine); }
+  h2 { font:500 clamp(40px, 5.2vw, 68px)/1 var(--serif); letter-spacing:-.015em; margin:0 0 20px; }
+  h2 em { font-style:italic; color:var(--wine); }
+  .lead { font-size:clamp(17px, 1.6vw, 19.5px); color:var(--ink2); max-width:44ch; margin:0 0 36px; }
+
+  /* hero */
+  .hero { padding:clamp(48px, 7vw, 96px) 0 clamp(64px, 8vw, 110px); }
+  .hero .wrap { display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(36px, 6vw, 90px); align-items:end; }
+  .ctas { display:flex; flex-wrap:wrap; gap:12px; }
+  .reach { margin:40px 0 0; padding-top:22px; border-top:1px solid var(--line); color:var(--mute); font-size:15px; display:flex; flex-wrap:wrap; gap:8px 26px; }
+  .reach span::before { content:""; display:inline-block; width:6px; height:6px; background:var(--wine); border-radius:50%; margin-right:10px; vertical-align:middle; }
+  .photo { position:relative; }
+  .photo img { width:100%; aspect-ratio:4/5; object-fit:cover; object-position:40% 50%; border-radius:2px; filter:saturate(.85); }
+  .photo figcaption { position:absolute; left:-28px; bottom:30px; background:var(--paper); padding:18px 22px; max-width:270px;
+    font:italic 500 20px/1.3 var(--serif); box-shadow:0 10px 30px -18px rgba(0,0,0,.35); }
+
+  section.block { padding:clamp(80px, 10vw, 140px) 0; }
+
+  /* areas */
+  .areas-head { display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:end; margin-bottom:50px; }
+  .areas-head p:not(.eyebrow) { color:var(--ink2); margin:0; }
+  .areas { border-top:1px solid var(--ink); }
+  .area { display:grid; grid-template-columns:90px 1fr 1.1fr; gap:24px; padding:32px 0; border-bottom:1px solid var(--line); align-items:start; transition:background .3s; }
+  .area .n { font:italic 500 30px/1 var(--serif); color:var(--wine); }
+  .area h3 { font:500 clamp(28px, 3vw, 38px)/1.05 var(--serif); margin:0; letter-spacing:-.01em; }
+  .area p { margin:0; color:var(--ink2); }
+  .area ul { margin:10px 0 0; padding:0; list-style:none; color:var(--mute); font-size:15px; }
+  .area li::before { content:"— "; color:var(--wine); }
+
+  /* method (dark) */
+  .method { background:var(--night); color:#eceae4; position:relative; overflow:hidden; }
+  .method::before { content:""; position:absolute; inset:0; background:url(img/livros.webp) center/cover; opacity:.18; }
+  .method .wrap { position:relative; }
+  .method .eyebrow { color:#d8a39b; }
+  .method h2 em { color:#e0b0a8; }
+  .method .intro { color:#b9b6ae; max-width:48ch; margin:0 0 56px; }
+  .steps { display:grid; grid-template-columns:repeat(4, 1fr); gap:0; border-top:1px solid rgba(255,255,255,.18); }
+  .step { padding:30px 26px 10px 0; }
+  .step + .step { padding-left:26px; border-left:1px solid rgba(255,255,255,.18); }
+  .step b { display:block; font:italic 500 44px/1 var(--serif); color:#e0b0a8; margin-bottom:18px; }
+  .step h3 { font:600 18px/1.3 var(--sans); margin:0 0 8px; }
+  .step p { margin:0; color:#aeaba3; font-size:15.5px; }
+
+  /* office */
+  .office { display:grid; grid-template-columns:1fr 1fr 1fr; grid-template-rows:auto auto; gap:16px; }
+  .office figure { margin:0; overflow:hidden; }
+  .office img { width:100%; height:100%; object-fit:cover; filter:saturate(.85); transition:transform 1.2s cubic-bezier(.2,.8,.2,1); }
+  .office figure:hover img { transform:scale(1.04); }
+  .office .a { grid-column:1 / 3; aspect-ratio:16/9; }
+  .office .b { aspect-ratio:3/4; grid-row:span 2; }
+  .office .c { aspect-ratio:4/3; }
+  .office .txt { background:var(--paper2); padding:30px; display:flex; flex-direction:column; justify-content:center; }
+  .office .txt p { margin:0; color:var(--ink2); }
+  .office .txt p b { color:var(--ink); }
+
+  /* faq */
+  .faq { display:grid; grid-template-columns:.8fr 1.2fr; gap:clamp(30px, 6vw, 80px); }
+  details { border-bottom:1px solid var(--line); }
+  details:first-child { border-top:1px solid var(--ink); }
+  summary { list-style:none; cursor:pointer; padding:24px 44px 24px 0; font:500 26px/1.2 var(--serif); position:relative; }
+  summary::-webkit-details-marker { display:none; }
+  summary::before, summary::after { content:""; position:absolute; right:8px; top:50%; width:16px; height:1.5px; background:var(--wine); transition:transform .3s; }
+  summary::after { transform:rotate(90deg); }
+  details[open] summary::after { transform:rotate(0); }
+  details p { margin:0 0 24px; color:var(--ink2); max-width:58ch; }
+
+  /* contact */
+  .contact { background:var(--paper2); }
+  .contact .wrap { display:grid; grid-template-columns:1fr 1fr; gap:clamp(30px, 5vw, 70px); align-items:stretch; }
+  .info { list-style:none; padding:0; margin:28px 0 34px; border-top:1px solid var(--line); }
+  .info li { display:grid; grid-template-columns:130px 1fr; gap:14px; padding:16px 0; border-bottom:1px solid var(--line); }
+  .info span { color:var(--mute); font-size:14px; letter-spacing:.06em; text-transform:uppercase; font-weight:600; padding-top:2px; }
+  .map { min-height:420px; overflow:hidden; background:linear-gradient(rgba(23,24,28,.35), rgba(23,24,28,.35)), url(img/sala.webp) center/cover; }
+  .map iframe { width:100%; height:100%; min-height:420px; border:0; filter:grayscale(1) contrast(1.05); }
+  .oab { font-size:13px; color:var(--mute); margin-top:22px; }
+
+  footer.site { background:var(--ink); color:#a9a59c; padding:36px 0 calc(36px + env(safe-area-inset-bottom)); font-size:14px; }
+  footer.site .wrap { display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  footer.site a { color:#fff; }
+
+  .fab { position:fixed; right:18px; bottom:calc(18px + env(safe-area-inset-bottom)); z-index:30; width:58px; height:58px; border-radius:50%; display:grid; place-items:center;
+    background:var(--wine); color:#fff; box-shadow:0 10px 24px -10px rgba(0,0,0,.6); }
+  .fab svg { width:27px; height:27px; }
+
+  .rv { opacity:0; transform:translateY(22px); transition:opacity .9s cubic-bezier(.2,.8,.2,1), transform .9s cubic-bezier(.2,.8,.2,1); }
+  .rv.in { opacity:1; transform:none; }
+
+  @media (max-width:980px) {
+    nav ul { display:none; }
+    .hero .wrap, .areas-head, .contact .wrap, .faq { grid-template-columns:1fr; }
+    .photo figcaption { left:14px; right:14px; bottom:14px; max-width:none; }
+    .area { grid-template-columns:60px 1fr; }
+    .area > div:last-child { grid-column:2; }
+    .steps { grid-template-columns:1fr 1fr; }
+    .step:nth-child(3) { padding-left:0; border-left:0; }
+    .step:nth-child(n+3) { border-top:1px solid rgba(255,255,255,.18); margin-top:10px; }
+    .office { grid-template-columns:1fr 1fr; }
+    .office .a { grid-column:1 / -1; }
+    .office .b { grid-row:auto; aspect-ratio:4/3; }
+    .office .txt { grid-column:1 / -1; }
+  }
+  @media (max-width:600px) {
+    body { font-size:16px; }
+    header.top .btn-sm { padding:10px 12px; font-size:13px; }
+    .logo b { font-size:20px; white-space:nowrap; }
+    .ctas .btn { width:100%; }
+    .area { grid-template-columns:1fr; gap:10px; }
+    .area > div:last-child { grid-column:auto; }
+    .steps { grid-template-columns:1fr; }
+    .step, .step + .step { padding:26px 0 8px; border-left:0; }
+    .step + .step { border-top:1px solid rgba(255,255,255,.18); }
+    .office { grid-template-columns:1fr; }
+    .info li { grid-template-columns:1fr; gap:2px; }
+    summary { font-size:23px; }
+  }
+  @media (prefers-reduced-motion:reduce) {
+    *, *::before, *::after { animation:none !important; transition:none !important; }
+    .rv { opacity:1; transform:none; }
+  }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Zm4.52 11.99c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></symbol>
+</svg>
+
+<div class="demo">Modelo de demonstração: o Andrade &amp; Menezes é um escritório fictício. <a href="https://devluisam.github.io/sites/">Quer um site assim? →</a></div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#"><b>Andrade &amp; Menezes</b><small>ADVOCACIA</small></a>
+    <nav><ul><li><a href="#areas">Áreas</a></li><li><a href="#como">Como trabalhamos</a></li><li><a href="#escritorio">Escritório</a></li><li><a href="#contato">Contato</a></li></ul></nav>
+    <a class="btn btn-wine btn-sm" data-wa href="#">Falar com a gente</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Advocacia em Manaus</p>
+        <h1>Direito explicado em <em>português claro.</em></h1>
+        <p class="lead">Atendemos pessoas e pequenas empresas. Antes de decidir qualquer coisa, você entende o seu caso, as suas opções e os próximos passos.</p>
+        <div class="ctas">
+          <a class="btn btn-wine" data-wa href="#"><svg aria-hidden="true"><use href="#wa"/></svg>Agendar uma conversa</a>
+          <a class="btn btn-ghost" href="#areas">Áreas de atuação</a>
+        </div>
+        <p class="reach"><span>Presencial no Centro de Manaus</span><span>Online para todo o Amazonas</span></p>
+      </div>
+      <figure class="photo" style="margin:0">
+        <img src="img/hero.webp" alt="Advogado conversando com cliente em reunião" width="1800" height="1200" fetchpriority="high">
+        <figcaption>“Você conta o caso. A gente explica o caminho.”</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="block" id="areas" style="padding-top:0">
+    <div class="wrap">
+      <div class="areas-head">
+        <div><p class="eyebrow rv">Áreas de atuação</p><h2 class="rv">No que podemos <em>ajudar.</em></h2></div>
+        <p class="rv">Se o seu caso não estiver aqui, pergunte mesmo assim. Quando não for a nossa área, indicamos quem é.</p>
+      </div>
+      <div class="areas">
+        <div class="area rv"><span class="n">i.</span><h3>Trabalhista</h3><div><p>Para quem trabalha e para quem emprega.</p><ul><li>Demissão, verbas e acordos</li><li>Horas extras e FGTS</li><li>Defesa de pequenas empresas</li></ul></div></div>
+        <div class="area rv"><span class="n">ii.</span><h3>Família e sucessões</h3><div><p>Momentos delicados, tratados com cuidado.</p><ul><li>Divórcio e guarda</li><li>Pensão alimentícia</li><li>Inventário e testamento</li></ul></div></div>
+        <div class="area rv"><span class="n">iii.</span><h3>Consumidor</h3><div><p>Quando a empresa não resolve.</p><ul><li>Cobranças indevidas</li><li>Nome negativado sem motivo</li><li>Voos, bancos e planos de saúde</li></ul></div></div>
+        <div class="area rv"><span class="n">iv.</span><h3>Previdenciário</h3><div><p>Seu direito junto ao INSS.</p><ul><li>Aposentadoria e revisão</li><li>Auxílio-doença e BPC</li><li>Pedido negado pelo INSS</li></ul></div></div>
+        <div class="area rv"><span class="n">v.</span><h3>Empresarial</h3><div><p>Para o dia a dia do pequeno negócio.</p><ul><li>Contratos com clientes e fornecedores</li><li>Abertura e alteração de empresa</li><li>Cobrança de inadimplentes</li></ul></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block method" id="como">
+    <div class="wrap">
+      <p class="eyebrow rv">Como trabalhamos</p>
+      <h2 class="rv">Sem juridiquês. <em>Sem surpresa.</em></h2>
+      <p class="intro rv">Você sabe o que está acontecendo no seu processo e quanto vai custar, do começo ao fim.</p>
+      <div class="steps">
+        <div class="step rv"><b>1</b><h3>Primeira conversa</h3><p>Você conta o que aconteceu, por WhatsApp, vídeo ou no escritório.</p></div>
+        <div class="step rv"><b>2</b><h3>Análise do caso</h3><p>Olhamos documentos e prazos e dizemos com franqueza quais são as opções.</p></div>
+        <div class="step rv"><b>3</b><h3>Proposta por escrito</h3><p>Honorários e etapas combinados antes de começar.</p></div>
+        <div class="step rv"><b>4</b><h3>Acompanhamento</h3><p>Cada novidade do processo chega explicada, sem você precisar ligar pra perguntar.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="escritorio">
+    <div class="wrap">
+      <p class="eyebrow rv">O escritório</p>
+      <h2 class="rv" style="margin-bottom:44px">Um lugar pra conversar <em>com calma.</em></h2>
+      <div class="office">
+        <figure class="a rv"><img src="img/acordo.webp" alt="Aperto de mãos sobre a mesa após reunião" width="1400" height="933" loading="lazy"></figure>
+        <figure class="b rv"><img src="img/assinatura.webp" alt="Mão assinando um documento" width="1400" height="1051" loading="lazy"></figure>
+        <figure class="c rv"><img src="img/recepcao.webp" alt="Recepção com poltronas e luz natural" width="1400" height="933" loading="lazy"></figure>
+        <div class="txt rv"><p><b>Salas reservadas</b> pra você falar do seu caso com privacidade. Estacionamento conveniado e acesso para cadeira de rodas.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="duvidas" style="padding-top:0">
+    <div class="wrap faq">
+      <div><p class="eyebrow rv">Dúvidas</p><h2 class="rv">Antes de <em>marcar.</em></h2></div>
+      <div class="rv">
+        <details><summary>A primeira conversa é cobrada?</summary><p>Explicamos tudo sobre valores no primeiro contato pelo WhatsApp, antes de você vir ao escritório.</p></details>
+        <details><summary>Preciso ir até o escritório?</summary><p>Não. Dá pra fazer tudo online, com assinatura digital de documentos. Se preferir, atendemos presencialmente.</p></details>
+        <details><summary>Quais documentos devo levar?</summary><p>Depende do caso. Quando você marcar, mandamos a lista certinha pelo WhatsApp.</p></details>
+        <details><summary>Vocês atendem fora de Manaus?</summary><p>Sim, atendemos online em todo o Amazonas.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="block contact" id="contato">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow rv">Contato</p>
+        <h2 class="rv">Vamos conversar sobre o <em>seu caso.</em></h2>
+        <ul class="info rv">
+          <li><span>Endereço</span>Av. Eduardo Ribeiro, Centro · Manaus - AM</li>
+          <li><span>Horário</span>Segunda a sexta, 8h às 18h</li>
+          <li><span>Atendimento</span>Presencial, por vídeo ou WhatsApp</li>
+        </ul>
+        <div class="ctas rv">
+          <a class="btn btn-wine" data-wa href="#"><svg aria-hidden="true"><use href="#wa"/></svg>Falar pelo WhatsApp</a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Av.+Eduardo+Ribeiro+Manaus" target="_blank" rel="noopener">Como chegar</a>
+        </div>
+        <p class="oab rv">Andrade &amp; Menezes Sociedade de Advogados · OAB/AM nº 0000 · Responsável: Nome Sobrenome, OAB/AM 00.000</p>
+      </div>
+      <div class="map rv"><iframe title="Mapa: Av. Eduardo Ribeiro, Manaus" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Av.+Eduardo+Ribeiro,+Centro,+Manaus+-+AM&z=15&output=embed"></iframe></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>Andrade &amp; Menezes · escritório fictício · fotos: Unsplash</span>
+    <span>Site-modelo feito por <a href="https://devluisam.github.io/sites/">devluisam</a></span>
+  </div>
+</footer>
+
+<a class="fab" data-wa href="#" aria-label="Falar no WhatsApp"><svg aria-hidden="true"><use href="#wa"/></svg></a>
+
+<script>
+  // Neste modelo, os botões de contato falam com o devluisam (quem faz o site).
+  const WA = 'https://wa.me/5592981295937?text=' + encodeURIComponent('Oi, Luis! Vi o modelo de advocacia e quero um site assim para o meu escritório.');
+  document.querySelectorAll('[data-wa]').forEach(a => { a.href = WA; a.target = '_blank'; a.rel = 'noopener'; });
+  const els = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+    els.forEach((el, k) => { el.style.transitionDelay = (k % 3) * 80 + 'ms'; io.observe(el); });
+  } else els.forEach(el => el.classList.add('in'));
+</script>
+</body>
+</html>
