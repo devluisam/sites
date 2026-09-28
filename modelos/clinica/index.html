@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f6f3ee">
+<title>Sorriso Norte · Odontologia (modelo de demonstração)</title>
+<meta name="description" content="Modelo de demonstração feito por devluisam: site para clínica odontológica em Manaus.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero.webp">
+<style>
+  :root {
+    --bg:#f6f3ee; --paper:#fffdf9; --ink:#10282c; --ink2:#3d5458; --mute:#5f7275; --teal:#155e63; --teal2:#0f4a4e; --mint:#dcebe6; --sand:#ecdfcc;
+    --line:#e2dbd0; --r:26px; --pad:clamp(20px, 5vw, 48px);
+    --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif; --sans:"Hanken Grotesk", "Segoe UI", system-ui, sans-serif;
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:400 17px/1.65 var(--sans); overflow-x:hidden; -webkit-tap-highlight-color:transparent; }
+  img { display:block; max-width:100%; height:auto; }
+  a { color:inherit; }
+  .wrap { width:min(1200px, 100%); margin:0 auto; padding:0 var(--pad); }
+
+  .demo { background:var(--ink); color:#cfe0de; font-size:13px; text-align:center; padding:9px 16px; line-height:1.4; }
+  .demo a { color:#fff; font-weight:700; text-decoration:none; white-space:nowrap; }
+
+  header.top { position:sticky; top:0; z-index:20; background:rgba(246,243,238,.85); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid transparent; transition:border-color .3s; }
+  header.top.scrolled { border-color:var(--line); }
+  header.top .wrap { display:flex; align-items:center; justify-content:space-between; height:76px; }
+  .logo { display:flex; align-items:center; gap:10px; text-decoration:none; font:700 21px/1 var(--display); letter-spacing:-.02em; }
+  .logo i { width:34px; height:34px; border-radius:11px; background:var(--teal); position:relative; }
+  .logo i::after { content:""; position:absolute; left:8px; right:8px; bottom:10px; height:9px; border:3px solid #fff; border-top:0; border-radius:0 0 12px 12px; }
+  .logo span { color:var(--teal); }
+  nav ul { display:flex; gap:30px; list-style:none; margin:0; padding:0; font-weight:600; font-size:15px; color:var(--ink2); }
+  nav a { text-decoration:none; }
+  nav a:hover { color:var(--teal); }
+
+  .btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; border-radius:999px; padding:16px 26px; font:700 16px/1 var(--sans); text-decoration:none;
+    transition:transform .15s ease, background .25s ease; white-space:nowrap; }
+  .btn:active { transform:scale(.97); }
+  .btn-main { background:var(--teal); color:#fff; box-shadow:0 10px 24px -14px rgba(16,40,44,.6); }
+  .btn-main:hover { background:var(--teal2); }
+  .btn-soft { background:var(--paper); color:var(--ink); border:1px solid var(--line); }
+  .btn-soft:hover { background:#fff; }
+  .btn svg { width:20px; height:20px; }
+  .btn-sm { padding:12px 18px; font-size:14px; }
+
+  .kicker { font:700 13px/1 var(--sans); letter-spacing:.16em; text-transform:uppercase; color:var(--teal); margin:0 0 20px; }
+  h1 { font:600 clamp(42px, 6.4vw, 84px)/1 var(--display); letter-spacing:-.04em; margin:0 0 26px; }
+  h1 span { color:var(--teal); }
+  h2 { font:600 clamp(34px, 4.6vw, 58px)/1.04 var(--display); letter-spacing:-.035em; margin:0 0 18px; max-width:18ch; }
+  .lead { font-size:clamp(17px, 1.6vw, 20px); color:var(--ink2); max-width:42ch; margin:0 0 34px; }
+
+  /* hero */
+  .hero { padding:clamp(40px, 7vw, 90px) 0 clamp(70px, 9vw, 120px); }
+  .hero .wrap { display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(36px, 6vw, 90px); align-items:center; }
+  .ctas { display:flex; flex-wrap:wrap; gap:12px; }
+  .trust { display:flex; flex-wrap:wrap; gap:12px 26px; margin:40px 0 0; padding:0; list-style:none; color:var(--ink2); font-weight:600; font-size:15px; }
+  .trust li { display:flex; align-items:center; gap:9px; }
+  .trust svg { width:20px; height:20px; color:var(--teal); flex:none; }
+  .portrait { position:relative; justify-self:end; width:min(100%, 480px); }
+  .portrait .frame { border-radius:260px 260px 30px 30px; overflow:hidden; aspect-ratio:4/5; background:var(--mint); }
+  .portrait img { width:100%; height:100%; object-fit:cover; object-position:50% 30%; }
+  .float { position:absolute; background:var(--paper); border:1px solid var(--line); border-radius:18px; padding:14px 18px; box-shadow:0 8px 18px -12px rgba(16,40,44,.35); font-size:14px; }
+  .float b { display:block; font:700 17px/1.25 var(--display); }
+  .f1 { left:-40px; bottom:70px; }
+  .f1 .dot { display:inline-block; width:9px; height:9px; border-radius:50%; background:#1f9d6b; margin-right:7px; box-shadow:0 0 0 4px rgba(31,157,107,.16); }
+  .f2 { right:-24px; top:40px; max-width:210px; }
+
+  section.block { padding:clamp(80px, 10vw, 140px) 0; }
+  .head { display:grid; grid-template-columns:1fr .8fr; gap:30px; align-items:end; margin-bottom:56px; }
+  .head p:not(.kicker) { color:var(--ink2); margin:0; font-size:18px; }
+
+  /* treatments */
+  .treat { display:grid; grid-template-columns:repeat(3, 1fr); gap:18px; }
+  .t { background:var(--paper); border:1px solid var(--line); border-radius:var(--r); padding:30px; display:flex; flex-direction:column; min-height:250px;
+    transition:transform .35s cubic-bezier(.2,.8,.2,1), border-color .3s; }
+  .t:hover { transform:translateY(-4px); border-color:#c9d8d3; }
+  .t .n { font:600 15px/1 var(--display); color:var(--teal); margin-bottom:auto; letter-spacing:.02em; }
+  .t h3 { font:600 23px/1.2 var(--display); letter-spacing:-.02em; margin:26px 0 8px; }
+  .t p { margin:0; color:var(--mute); font-size:15.5px; }
+  .t.feature { grid-column:span 2; flex-direction:row; padding:0; overflow:hidden; background:var(--teal); color:#fff; border:0; }
+  .t.feature .txt { padding:34px; display:flex; flex-direction:column; justify-content:flex-end; flex:1; }
+  .t.feature h3 { font-size:30px; margin-top:0; }
+  .t.feature p { color:#cfe3e0; }
+  .t.feature .pill { align-self:flex-start; font:700 12px/1 var(--sans); letter-spacing:.1em; text-transform:uppercase; background:rgba(255,255,255,.14); padding:8px 12px; border-radius:999px; margin-bottom:auto; }
+  .t.feature img { width:46%; object-fit:cover; }
+
+  /* first visit */
+  .visit { background:var(--paper); border-block:1px solid var(--line); }
+  .visit .wrap { display:grid; grid-template-columns:1fr 1fr; gap:clamp(36px, 6vw, 90px); align-items:center; }
+  .visit .pic { border-radius:var(--r); overflow:hidden; aspect-ratio:4/3.4; }
+  .visit .pic img { width:100%; height:100%; object-fit:cover; }
+  .steps { list-style:none; padding:0; margin:36px 0 0; counter-reset:s; }
+  .steps li { counter-increment:s; display:grid; grid-template-columns:48px 1fr; gap:18px; padding:20px 0; border-top:1px solid var(--line); }
+  .steps li::before { content:counter(s); width:40px; height:40px; border-radius:50%; background:var(--mint); color:var(--teal); display:grid; place-items:center; font:700 17px/1 var(--display); }
+  .steps h3 { font:600 20px/1.3 var(--display); margin:6px 0 4px; }
+  .steps p { margin:0; color:var(--mute); font-size:15.5px; }
+
+  /* clinic */
+  .clinic { display:grid; grid-template-columns:1.2fr .8fr; gap:18px; }
+  .clinic figure { margin:0; border-radius:var(--r); overflow:hidden; position:relative; }
+  .clinic img { width:100%; height:100%; object-fit:cover; }
+  .clinic .big { grid-row:span 2; min-height:520px; }
+  .clinic .note { background:var(--sand); border-radius:var(--r); padding:30px; }
+  .clinic .note h3 { font:600 24px/1.2 var(--display); margin:0 0 10px; letter-spacing:-.02em; }
+  .clinic .note ul { margin:0; padding:0 0 0 20px; color:var(--ink2); }
+  .clinic .note li { margin:6px 0; }
+
+  /* reviews */
+  .reviews { display:grid; grid-template-columns:repeat(3, 1fr); gap:18px; }
+  blockquote { margin:0; background:var(--paper); border:1px solid var(--line); border-radius:var(--r); padding:30px; }
+  .stars { color:#c98a2b; letter-spacing:3px; }
+  blockquote p { font:500 19px/1.5 var(--display); margin:12px 0 16px; letter-spacing:-.01em; }
+  blockquote footer { color:var(--mute); font-size:14px; }
+  .small { color:var(--mute); font-size:13px; margin-top:16px; }
+
+  /* faq */
+  .faq { max-width:820px; }
+  details { border-bottom:1px solid var(--line); }
+  summary { list-style:none; cursor:pointer; padding:24px 44px 24px 0; font:600 20px/1.35 var(--display); position:relative; }
+  summary::-webkit-details-marker { display:none; }
+  summary::after { content:""; position:absolute; right:6px; top:50%; width:14px; height:14px; margin-top:-10px; border-right:2.5px solid var(--teal); border-bottom:2.5px solid var(--teal); transform:rotate(45deg); transition:transform .3s; }
+  details[open] summary::after { transform:rotate(225deg); margin-top:-3px; }
+  details p { margin:0 0 24px; color:var(--ink2); max-width:62ch; }
+
+  /* contact */
+  .contact { background:var(--ink); color:#e8f1ef; border-radius:34px; padding:clamp(34px, 6vw, 70px); display:grid; grid-template-columns:1fr 1fr; gap:clamp(30px, 5vw, 60px); }
+  .contact h2 { color:#fff; }
+  .contact .kicker { color:#8fd0c6; }
+  .contact p { color:#b9cdca; }
+  .hours { list-style:none; padding:0; margin:26px 0 30px; }
+  .hours li { display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid rgba(255,255,255,.12); }
+  .contact .btn-main { background:#fff; color:var(--ink); }
+  .contact .btn-main:hover { background:var(--mint); }
+  .contact .btn-soft { background:transparent; color:#fff; border-color:rgba(255,255,255,.3); }
+  .map { border-radius:22px; overflow:hidden; min-height:360px; background:linear-gradient(rgba(16,40,44,.35), rgba(16,40,44,.35)), url(img/sala.webp) center/cover; }
+  .map iframe { width:100%; height:100%; min-height:360px; border:0; }
+  .rt { font-size:13px; color:#8fa9a5; margin-top:22px; }
+
+  footer.site { padding:40px 0 calc(40px + env(safe-area-inset-bottom)); color:var(--mute); font-size:14px; }
+  footer.site .wrap { display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+
+  .fab { position:fixed; right:18px; bottom:calc(18px + env(safe-area-inset-bottom)); z-index:30; width:60px; height:60px; border-radius:50%; display:grid; place-items:center;
+    background:var(--teal); color:#fff; box-shadow:0 12px 26px -10px rgba(16,40,44,.6); }
+  .fab svg { width:28px; height:28px; }
+
+  .rv { opacity:0; transform:translateY(24px); transition:opacity .85s cubic-bezier(.2,.8,.2,1), transform .85s cubic-bezier(.2,.8,.2,1); }
+  .rv.in { opacity:1; transform:none; }
+
+  @media (max-width:980px) {
+    nav ul { display:none; }
+    .hero .wrap, .visit .wrap, .contact, .head { grid-template-columns:1fr; }
+    .portrait { justify-self:center; width:min(100%, 420px); }
+    .f1 { left:-8px; } .f2 { right:-8px; }
+    .treat { grid-template-columns:1fr 1fr; }
+    .t.feature { grid-column:1 / -1; }
+    .clinic { grid-template-columns:1fr; }
+    .clinic .big { min-height:0; aspect-ratio:4/3; }
+    .reviews { grid-template-columns:1fr; }
+  }
+  @media (max-width:600px) {
+    body { font-size:16px; }
+    .treat { grid-template-columns:1fr; }
+    .t { min-height:0; }
+    .t.feature { flex-direction:column-reverse; }
+    .t.feature img { width:100%; aspect-ratio:16/10; }
+    .ctas .btn { width:100%; }
+    .f2 { display:none; }
+    .f1 { bottom:24px; }
+    header.top .btn-sm { padding:10px 14px; }
+  }
+  @media (prefers-reduced-motion:reduce) {
+    *, *::before, *::after { animation:none !important; transition:none !important; }
+    .rv { opacity:1; transform:none; }
+  }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Zm4.52 11.99c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></symbol>
+  <symbol id="cal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M8 3v4M16 3v4M3.5 10h17"/></g></symbol>
+  <symbol id="card" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 15h3"/></g></symbol>
+  <symbol id="car" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 16V11l2-5h10l2 5v5M5 16h14M5 16v2M19 16v2M4 11h16"/><circle cx="8" cy="13.5" r=".6"/><circle cx="16" cy="13.5" r=".6"/></g></symbol>
+  <symbol id="sparkle" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 3c.6 4.6 2.4 6.4 7 7-4.6.6-6.4 2.4-7 7-.6-4.6-2.4-6.4-7-7 4.6-.6 6.4-2.4 7-7Z"/></symbol>
+  <symbol id="shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 3 5 6v5.5c0 4.4 3 8 7 9.5 4-1.5 7-5.1 7-9.5V6l-7-3Zm-3 9 2 2 4-4"/></symbol>
+  <symbol id="screw" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M8 4h8l-1 5H9L8 4Z"/><path d="M9.5 11h5M10 14h4M10.5 17h3M12 20v1"/></g></symbol>
+  <symbol id="root" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M7 4c-2 0-3 1.6-3 4 0 3 1.5 4 2 7 .4 2.4 1 5 2.5 5 1.4 0 1.5-3 2-5 .3-1.1.8-1.6 1.5-1.6s1.2.5 1.5 1.6c.5 2 .6 5 2 5 1.5 0 2.1-2.6 2.5-5 .5-3 2-4 2-7 0-2.4-1-4-3-4-1.8 0-3 1-5 1S8.8 4 7 4Z"/></symbol>
+  <symbol id="kid" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14c.9 1.3 2 2 3.5 2s2.6-.7 3.5-2"/><circle cx="9" cy="10" r=".6"/><circle cx="15" cy="10" r=".6"/></g></symbol>
+</svg>
+
+<div class="demo">Modelo de demonstração: a Sorriso Norte é uma clínica fictícia. <a href="https://devluisam.github.io/sites/">Quer um site assim? →</a></div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#"><i aria-hidden="true"></i>sorriso<span>norte</span></a>
+    <nav><ul><li><a href="#tratamentos">Tratamentos</a></li><li><a href="#consulta">Primeira consulta</a></li><li><a href="#duvidas">Dúvidas</a></li><li><a href="#contato">Contato</a></li></ul></nav>
+    <a class="btn btn-main btn-sm" data-wa href="#">Agendar</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="kicker">Odontologia em Manaus</p>
+        <h1>Tratamento sem pressa. <span>Sorriso sem medo.</span></h1>
+        <p class="lead">Consulta com hora marcada, cada etapa explicada antes de começar e um plano de tratamento que cabe na sua rotina e no seu bolso.</p>
+        <div class="ctas">
+          <a class="btn btn-main" data-wa href="#"><svg aria-hidden="true"><use href="#wa"/></svg>Agendar avaliação</a>
+          <a class="btn btn-soft" href="#tratamentos">Ver tratamentos</a>
+        </div>
+        <ul class="trust">
+          <li><svg aria-hidden="true"><use href="#cal"/></svg>Hora marcada, sem fila</li>
+          <li><svg aria-hidden="true"><use href="#card"/></svg>Parcelamos no cartão</li>
+          <li><svg aria-hidden="true"><use href="#car"/></svg>Estacionamento no local</li>
+        </ul>
+      </div>
+      <div class="portrait">
+        <div class="frame"><img src="img/hero.webp" alt="Mulher sorrindo com os dentes à mostra" width="1400" height="2100" fetchpriority="high"></div>
+        <div class="float f1"><span class="dot"></span>Próximo horário livre<b>Amanhã, 9h30</b></div>
+        <div class="float f2"><b>Plano por escrito</b>Você sai da avaliação sabendo o que fazer e quanto custa.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="tratamentos" style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="kicker rv">Tratamentos</p><h2 class="rv">Do check-up ao sorriso novo.</h2></div>
+        <p class="rv">Atendemos adultos e crianças. Na avaliação, você entende o que precisa, o que pode esperar e em quantas sessões.</p>
+      </div>
+      <div class="treat">
+        <div class="t feature rv">
+          <div class="txt"><span class="pill">Mais procurado</span><h3>Alinhadores invisíveis</h3><p>Placas transparentes, feitas sob medida, pra alinhar os dentes sem aparelho de metal.</p></div>
+          <img src="img/alinhador.webp" alt="Mãos segurando alinhadores dentais transparentes" width="1200" height="857" loading="lazy">
+        </div>
+        <div class="t rv"><span class="n">01</span><h3>Limpeza e prevenção</h3><p>Limpeza, flúor e check-up pra evitar problema antes que ele apareça.</p></div>
+        <div class="t rv"><span class="n">02</span><h3>Clareamento</h3><p>No consultório ou com moldeira pra fazer em casa, com acompanhamento.</p></div>
+        <div class="t rv"><span class="n">03</span><h3>Implantes</h3><p>Reposição de dentes perdidos com planejamento feito a partir de exames.</p></div>
+        <div class="t rv"><span class="n">04</span><h3>Tratamento de canal</h3><p>Com anestesia e cuidado pra salvar o dente e acabar com a dor.</p></div>
+      </div>
+      <div class="treat" style="margin-top:18px">
+        <div class="t rv" style="grid-column:1 / -1; min-height:0; flex-direction:row; align-items:center; gap:22px">
+          <span class="n" style="margin:0; flex:none">05</span>
+          <div><h3 style="margin:0 0 4px">Odontopediatria</h3><p>Consulta pensada pra criança: no tempo dela, sem susto e com os pais junto.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block visit" id="consulta">
+    <div class="wrap">
+      <div class="pic rv"><img src="img/conversa.webp" alt="Dentista conversando com paciente no consultório" width="1400" height="1050" loading="lazy"></div>
+      <div>
+        <p class="kicker rv">Primeira consulta</p>
+        <h2 class="rv">Você entende tudo antes de começar.</h2>
+        <ol class="steps">
+          <li class="rv"><div><h3>Conversa e avaliação</h3><p>Ouvimos o que te incomoda e examinamos com calma.</p></div></li>
+          <li class="rv"><div><h3>Plano por escrito</h3><p>Você leva pra casa o que precisa ser feito, em quantas sessões e o valor.</p></div></li>
+          <li class="rv"><div><h3>Tratamento no seu ritmo</h3><p>Horários marcados com antecedência e lembrete no WhatsApp.</p></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="clinica">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="kicker rv">A clínica</p><h2 class="rv">Um lugar claro, calmo e limpo.</h2></div>
+        <p class="rv">Consultórios individuais, sala de espera confortável e acessibilidade pra quem usa cadeira de rodas.</p>
+      </div>
+      <div class="clinic">
+        <figure class="big rv"><img src="img/sala.webp" alt="Consultório odontológico claro e organizado" width="1600" height="1069" loading="lazy"></figure>
+        <figure class="rv"><img src="img/cuidado.webp" alt="Dentista atendendo paciente sorridente" width="1400" height="933" loading="lazy"></figure>
+        <div class="note rv"><h3>Biossegurança</h3><ul><li>Instrumentos esterilizados em autoclave</li><li>Material descartável por paciente</li><li>Ambiente higienizado a cada consulta</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="avaliacoes" style="padding-top:0">
+    <div class="wrap">
+      <p class="kicker rv">Pacientes</p>
+      <h2 class="rv">Quem vem, indica.</h2>
+      <div class="reviews" style="margin-top:44px">
+        <blockquote class="rv"><span class="stars" aria-label="5 estrelas">★★★★★</span><p>“Eu morria de medo de dentista. Explicaram cada passo e não senti nada.”</p><footer>Paciente · via Google</footer></blockquote>
+        <blockquote class="rv"><span class="stars" aria-label="5 estrelas">★★★★★</span><p>“Levei minha filha de 6 anos e ela saiu querendo voltar.”</p><footer>Paciente · via Google</footer></blockquote>
+        <blockquote class="rv"><span class="stars" aria-label="5 estrelas">★★★★★</span><p>“Recebi o plano com os valores certinhos. Sem surpresa no meio do tratamento.”</p><footer>Paciente · via Google</footer></blockquote>
+      </div>
+      <p class="small rv">Avaliações ilustrativas deste modelo. No seu site entram as avaliações reais do seu Google.</p>
+    </div>
+  </section>
+
+  <section class="block" id="duvidas" style="padding-top:0">
+    <div class="wrap">
+      <p class="kicker rv">Dúvidas</p>
+      <h2 class="rv">Perguntas que a gente mais ouve.</h2>
+      <div class="faq rv" style="margin-top:30px">
+        <details><summary>Vocês atendem convênio?</summary><p>Atendemos alguns convênios odontológicos e também particular. Mande o nome do seu plano no WhatsApp que a gente confirma.</p></details>
+        <details><summary>A primeira consulta já inclui limpeza?</summary><p>A primeira consulta é a avaliação. Se der tempo e fizer sentido, a limpeza pode ser feita no mesmo dia.</p></details>
+        <details><summary>Dá pra parcelar o tratamento?</summary><p>Sim. Parcelamos no cartão e montamos o plano de acordo com o que cabe pra você.</p></details>
+        <details><summary>Atendem urgência?</summary><p>Sim, em horário comercial. Chame no WhatsApp e explique o que está sentindo.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="contato" style="padding-top:0">
+    <div class="wrap">
+      <div class="contact rv">
+        <div>
+          <p class="kicker">Contato</p>
+          <h2>Marque sua avaliação.</h2>
+          <p>Av. Djalma Batista, Manaus - AM · próximo ao shopping</p>
+          <ul class="hours">
+            <li><span>Segunda a sexta</span><b>8h às 19h</b></li>
+            <li><span>Sábado</span><b>8h às 12h</b></li>
+          </ul>
+          <div class="ctas">
+            <a class="btn btn-main" data-wa href="#"><svg aria-hidden="true"><use href="#wa"/></svg>Agendar pelo WhatsApp</a>
+            <a class="btn btn-soft" href="https://www.google.com/maps/search/?api=1&query=Av.+Djalma+Batista+Manaus" target="_blank" rel="noopener">Como chegar</a>
+          </div>
+          <p class="rt">Responsável técnico: Dr(a). Nome Sobrenome · CRO-AM 00000</p>
+        </div>
+        <div class="map"><iframe title="Mapa: Av. Djalma Batista, Manaus" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Av.+Djalma+Batista,+Manaus+-+AM&z=14&output=embed"></iframe></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>Sorriso Norte · clínica fictícia · fotos: Unsplash</span>
+    <span>Site-modelo feito por <a href="https://devluisam.github.io/sites/">devluisam</a></span>
+  </div>
+</footer>
+
+<a class="fab" data-wa href="#" aria-label="Falar no WhatsApp"><svg aria-hidden="true"><use href="#wa"/></svg></a>
+
+<script>
+  // Neste modelo, os botões de contato falam com o devluisam (quem faz o site).
+  const WA = 'https://wa.me/5592981295937?text=' + encodeURIComponent('Oi, Luis! Vi o modelo de clínica e quero um site assim para o meu negócio.');
+  document.querySelectorAll('[data-wa]').forEach(a => { a.href = WA; a.target = '_blank'; a.rel = 'noopener'; });
+  const hdr = document.querySelector('header.top');
+  addEventListener('scroll', () => hdr.classList.toggle('scrolled', scrollY > 10), { passive: true });
+  const els = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+    els.forEach((el, k) => { el.style.transitionDelay = (k % 3) * 80 + 'ms'; io.observe(el); });
+  } else els.forEach(el => el.classList.add('in'));
+</script>
+</body>
+</html>

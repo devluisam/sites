@@ -127,11 +127,13 @@
 
   /* models */
   .models { display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; }
-  .model { margin:0; border-radius:18px; overflow:hidden; border:1px solid var(--line2); background:var(--card); }
+  .model { display:block; margin:0; border-radius:18px; overflow:hidden; border:1px solid var(--line2); background:var(--card); text-decoration:none; transition:transform .3s cubic-bezier(.2,.8,.2,1), border-color .3s; }
+  a.model:hover { transform:translateY(-4px); border-color:var(--blue); }
   .model .bar { display:flex; gap:6px; padding:12px 14px; background:#0e1a33; }
   .model .bar i { width:9px; height:9px; border-radius:50%; background:#26385e; }
   .model img { aspect-ratio:16/9; object-fit:cover; object-position:top; width:100%; height:auto; }
-  .model figcaption { padding:14px 16px; font-size:14px; color:var(--soft); font-weight:600; }
+  .model .cap { display:flex; justify-content:space-between; gap:10px; padding:14px 16px; font-size:14px; color:var(--soft); font-weight:600; }
+  .model .cap span { color:#8fd3ff; white-space:nowrap; }
   .disclaim { color:var(--muted); font-size:14px; margin:20px 0 0; font-family:var(--mono); }
 
   /* extras */
@@ -274,11 +276,11 @@
     <div class="wrap">
       <p class="eyebrow rv">Modelos</p>
       <h2 class="rv">Um pouco do estilo que eu faço.</h2>
-      <p class="sub rv">Cada negócio ganha um visual próprio. Estes são três exemplos para áreas diferentes.</p>
+      <p class="sub rv">Cada negócio ganha um visual próprio. Abra os modelos no seu celular e veja como o seu cliente vai ver.</p>
       <div class="models">
-        <figure class="model rv"><div class="bar"><i></i><i></i><i></i></div><img src="img/site-restaurante.webp" alt="Modelo de site para restaurante de culinária amazônica" width="1200" height="590" loading="lazy" decoding="async"><figcaption>Restaurante</figcaption></figure>
-        <figure class="model rv"><div class="bar"><i></i><i></i><i></i></div><img src="img/site-clinica.webp" alt="Modelo de site para clínica odontológica" width="1200" height="555" loading="lazy" decoding="async"><figcaption>Clínica</figcaption></figure>
-        <figure class="model rv"><div class="bar"><i></i><i></i><i></i></div><img src="img/site-advocacia.webp" alt="Modelo de site para escritório de advocacia" width="1200" height="590" loading="lazy" decoding="async"><figcaption>Escritório de advocacia</figcaption></figure>
+        <a class="model rv" href="modelos/restaurante/"><div class="bar"><i></i><i></i><i></i></div><img src="img/site-restaurante.webp" alt="Modelo de site para peixaria amazônica" width="1200" height="675" loading="lazy" decoding="async"><div class="cap">Restaurante <span>Ver ao vivo →</span></div></a>
+        <a class="model rv" href="modelos/clinica/"><div class="bar"><i></i><i></i><i></i></div><img src="img/site-clinica.webp" alt="Modelo de site para clínica odontológica" width="1200" height="675" loading="lazy" decoding="async"><div class="cap">Clínica odontológica <span>Ver ao vivo →</span></div></a>
+        <div class="model rv"><div class="bar"><i></i><i></i><i></i></div><img src="img/site-advocacia.webp" alt="Modelo de site para escritório de advocacia" width="1200" height="590" loading="lazy" decoding="async"><div class="cap">Escritório de advocacia</div></div>
       </div>
       <p class="disclaim rv">* Modelos de demonstração, com nomes e conteúdo fictícios.</p>
     </div>
